@@ -1122,7 +1122,7 @@ class SmartModelFormView(SmartFormMixin, SmartView, ModelFormMixin):
 
         except IntegrityError as e:
             message = str(e).capitalize()
-            errors = self.form._errors.setdefault(forms.forms.NON_FIELD_ERRORS, forms.utils.ErrorList())
+            errors = self.form._errors.setdefault(forms.forms.NON_FIELD_ERRORS, forms.util.ErrorList())
             errors.append(message)
             return self.render_to_response(self.get_context_data(form=form))
 
